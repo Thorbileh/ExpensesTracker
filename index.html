@@ -7,19 +7,48 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p id="demo"></p>
-    <form action="" id="meee">
-        <input id="incomeAmount" type="number" min="0" placeholder="Enter the income"  required><br>
-        <input type="number" id="expenceAmount" placeholder="Enter the expense" >
+    <div class="appContainer">
+        <div class="displayBox">
+
+                <div class="headerBox">
+                    <p>Income</p>
+                    <div  id="incomeDisplay">
+                        0
+                    </div>
+                </div>
+                    <div class="headerBox">
+                        <p>Expense</p>
+                        <div  id="expenseDisplay">
+                            0
+                        </div>
+                    </div>
     
-    <br><br>
+                    <div class="headerBox">
+                        <p>Balance</p>
+                        <div  id="balanceDisplay">
+                    0
+                        </div>
+                    </div>
+            
+        </div>
+    
+        <form action="" id="meee">
+            <input id="incomeAmount" type="number" min="0" placeholder="Enter the income"  required><br>
+            <input type="number" id="expenceAmount" placeholder="Enter the expense" >
+    
+        <br><br>
+        
+        </form>
+        
+                
+        <button onclick="displayIOB()" id="subBut" type="button">Amount</button> <br><br>
+              
+    
+       
 
-    </form>
-            <button onclick="displayMe()">Amount</button> <br><br>
+    </div>
 
-            <button onclick="displayExpens()">Expense</button>
-
-   
+    
     <script src="script.js"></script>
 </body>
 </html>
