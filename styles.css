@@ -1,3 +1,21 @@
-p{
-    color: red;
+.appContainer{
+    flex-direction: column;
+    width: 40%;
+    background-color: rgb(247, 247, 247);
+   
+    text-align: center;
 }
+
+.displayBox{
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+   margin-bottom: 23px;
+}
+.displayBox .headerBox{
+    border: 1px solid rgb(167, 166, 166);
+    background-color: #ffffff;
+    padding: 8px;
+    
+}
+
