@@ -3,52 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expense_Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="appContainer">
-        <div class="displayBox">
+    <div class="app">
+        <div class="main">
+            <div class="displayBox">
 
                 <div class="headerBox">
                     <p>Income</p>
-                    <div  id="incomeDisplay">
-                        0
-                    </div>
+                    <div  id="incomeDisplay">0</div>
                 </div>
-                    <div class="headerBox">
-                        <p>Expense</p>
-                        <div  id="expenseDisplay">
-                            0
-                        </div>
-                    </div>
+                <div class="headerBox">
+                    <p>Expense</p>
+                    <div  id="expenseDisplay">0</div>
+                </div>
+        
+                <div class="headerBox">
+                    <p>Balance</p>
+                    <div  id="balanceDisplay">0</div>
+                </div>
+            </div>
+
+            <div class="form1">  
+                <form action="" id="meee"></form>
+                    <select name="income_Expense" id="enter_Income_Expense" onchange="updatePlaceholder()">
+                        <option value="0" id="incomeAmount">Income</option>
+                        <option value="1" id="expenceAmount">Expense</option>
+                    </select>
     
-                    <div class="headerBox">
-                        <p>Balance</p>
-                        <div  id="balanceDisplay">
-                    0
-                        </div>
-                    </div>
-            
+                    <input type="text" placeholder="title of the transaction" id="titleEntered" required>
+                    <input  type="number" min="0" placeholder="Enter the income"  id="amountEntered" required>
+                    <br><br><br>
+                </form>
+                    
+            </div>
+
+            <button onclick="displayIOB()" id="subBut" type="button">Submit</button> <br><br>
+            <div class="displayTransation">
+                <table>
+                    <tr>
+                      <th >Type</th>
+                      <th >Tittle</th>
+                      <th >Amount</th>
+                    </tr>
+                        <tbody id="transactionTableBody"></tbody>
+                </table>
+            </div>
+
         </div>
-    
-        <form action="" id="meee">
-            <input id="incomeAmount" type="number" min="0" placeholder="Enter the income"  required><br>
-            <input type="number" id="expenceAmount" placeholder="Enter the expense" >
-    
-        <br><br>
         
-        </form>
-        
-                
-        <button onclick="displayIOB()" id="subBut" type="button">Amount</button> <br><br>
-              
-    
-       
-
     </div>
-
-    
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
