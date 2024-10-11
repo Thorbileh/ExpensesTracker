@@ -1,12 +1,5 @@
 
 
-//Function to save on local storage
-function saveTransactionStorage(income,expense)
-{
-    localStorage.setItem("income",income);
-    localStorage.setItem("expense",expense);
-}
-
 function displayIOB(){
    
     
@@ -24,6 +17,10 @@ function displayIOB(){
     let currentIncome = parseFloat((incomeDisplay.innerHTML));
     let currentExpense = parseFloat((expDisplay.innerHTML));
 
+    // Calculate and display balance
+    const balance = currentIncome - currentExpense;
+    balanDisplay.innerHTML = balance;
+
     // Check if it's income or expense based on selection
     let transactionType = '';
     if (selectElement.value === "0") {
@@ -32,9 +29,10 @@ function displayIOB(){
         transactionType = 'Income';
     } 
     else 
-    if (selectElement.value === "1" && amountInput>balanDisplay) {
+    if (selectElement.value === "1" && balance< amountInput) {
         
             alert("No Money available");
+            return;  // Stop function execution here if there is no money available to cover the expense amount
     }
     else
         {
@@ -56,13 +54,6 @@ function displayIOB(){
      // Append the new row to the transaction table
     transactionTableBody.appendChild(newRow);
 
-    // Calculate and display balance
-    const balance = currentIncome - currentExpense;
-    balanDisplay.innerHTML = balance;
-
-
-    //display transaction details
-    saveTransactionStorage(currentIncome, currentExpense);
 
     //clearing the input after entering data
     document.getElementById("titleEntered").value = '';
