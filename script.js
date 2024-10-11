@@ -56,7 +56,12 @@ function displayIOB(){
         }
        
     
+    // Add current time in the table of transaction record
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
 
+        const time = hours +":"+minutes;
 
     // Create a new row for the transaction table
     const newRow = document.createElement("tr");
@@ -64,6 +69,7 @@ function displayIOB(){
         <td> ${transactionType} </td>
         <td> ${titleInput} </td>
         <td> R${amountInput} </td>
+        <td> ${time} </td>
     `;
      // Append the new row to the transaction table
     transactionTableBody.appendChild(newRow);
