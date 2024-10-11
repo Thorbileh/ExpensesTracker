@@ -9,6 +9,7 @@
     background-color: whitesmoke;
     width: 50%;
     margin: auto;
+    box-shadow: 5px 8px 20px rgb(62, 62, 62);
 }
 
 .displayBox{

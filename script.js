@@ -21,6 +21,20 @@ function displayIOB(){
     const balance = currentIncome - currentExpense;
     balanDisplay.innerHTML = balance;
 
+    //if nothing is entered 
+    if (amountInput === 0 || titleInput === '') {
+        alert("Please enter an amount and a title");
+        return;
+    }  // Stop function execution here if no amount or title is entered
+
+
+    // Check if entered amount is a number
+    if (isNaN(amountInput)) {
+        alert("Please enter a valid number");
+        return;
+    }  // Stop function execution here if entered amount is not a number
+
+
     // Check if it's income or expense based on selection
     let transactionType = '';
     if (selectElement.value === "0") {
@@ -31,7 +45,7 @@ function displayIOB(){
     else 
     if (selectElement.value === "1" && balance< amountInput) {
         
-            alert("No Money available");
+            alert(amountInput+ " is the more than the balance of "+ balance);
             return;  // Stop function execution here if there is no money available to cover the expense amount
     }
     else
